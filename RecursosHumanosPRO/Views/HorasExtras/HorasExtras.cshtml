@@ -1,0 +1,43 @@
+﻿@model IEnumerable<RecursosHumanosPRO.Models.ViewModels.ListaHorasExtras>
+@{
+    ViewBag.Title = "Horas Extras";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<center><h2> @ViewBag.Title </h2></center>
+<div class="row" style=" text-align:right;padding:5px;">
+    <a href="~/HorasExtras/InsertarHorasExtras" class="btn btn-primary"> Insertar nuevo</a>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class=" table">
+            <tr>
+                <th>ID Horas Extras</th>
+                <th>ID Empleado</th>
+                <th>Cantidad de horas</th>
+                <th>Precio Hora</th>
+
+            </tr>
+            @foreach (var elento in Model)
+            {
+        <tr>
+            <td>@elento.IdHorasExtras</td>
+            <td>@elento.IdEmpleado</td>
+            <td>@elento.TablaHora </td>
+            <td>@elento.PrecioHora</td>
+
+            <td>
+                <a class="btn btn-default" href="~/HorasExtras/Editar/@elento.IdHorasExtras">
+                    <i class="fas fa-pencil-alt"></i>
+                </a>
+                <a class="btn btn-danger" href="~/HorasExtras/Eliminar/@elento.IdHorasExtras">
+                    <i class="fas fa-trash"></i></a>
+
+
+            </td>
+        </tr>
+            }
+
+        </table>
+    </div>
+</div>

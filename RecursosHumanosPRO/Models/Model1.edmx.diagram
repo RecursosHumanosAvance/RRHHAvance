@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="08189683f8b14233ad8d0a69a9c53652" Name="Diagram1">
+        <EntityTypeShape EntityType="RecursosHumanosModel.Aguinaldo" Width="1.5" PointX="12" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursosHumanosModel.Contratos" Width="1.5" PointX="9.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursosHumanosModel.Departamentos" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursosHumanosModel.Empleados" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursosHumanosModel.Empresa" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursosHumanosModel.HorasExtras" Width="1.5" PointX="9.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursosHumanosModel.Puestos" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursosHumanosModel.Rendimiento" Width="1.5" PointX="9.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursosHumanosModel.Usaurios" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursosHumanosModel.Vacaciones" Width="1.5" PointX="11.875" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursosHumanosModel.Vacantes" Width="1.5" PointX="7.5" PointY="12.375" IsExpanded="true" />
+        <AssociationConnector Association="RecursosHumanosModel.FK_Aguinaldo_Contratos" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursosHumanosModel.FK_Contratos_Empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursosHumanosModel.FK_Vacaciones_Contratos" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursosHumanosModel.FK_Departamento_Empresa" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursosHumanosModel.FK_Puesto_Departamento" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursosHumanosModel.FK_Empleados_Puestos" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursosHumanosModel.FK_HorasExtras_Empleados" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursosHumanosModel.FK_Rendimiento_Empleados" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursosHumanosModel.FK_Vacantes_Puesto" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

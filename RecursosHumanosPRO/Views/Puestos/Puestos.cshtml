@@ -1,0 +1,41 @@
+﻿@model IEnumerable<RecursosHumanosPRO.Models.ViewModels.ListaPuestos>
+@{
+    ViewBag.Title = "Puestos";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<center><h2> @ViewBag.Title </h2></center>
+<div class="row" style=" text-align:right;padding:5px;">
+    <a href="~/Puestos/InsertarPuestos" class="btn btn-primary"> Insertar nuevo</a>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class=" table">
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Departamento</th>
+                <th>Descripcion</th>
+            </tr>
+            @foreach (var elento in Model)
+            {
+        <tr>
+            <td>@elento.IdPuesto</td>
+            <td>@elento.NombrePuesto</td>
+            <td>@elento.NombreDepartamento </td>
+            <td>@elento.Descripcion </td>
+            <td>
+                <a class="btn btn-default" href="~/Puestos/Editar/@elento.IdPuesto">
+                    <i class="fas fa-pencil-alt"></i>
+                </a>
+                <a class="btn btn-danger" href="~/Puestos/Eliminar/@elento.IdPuesto">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+            }
+
+        </table>
+    </div>
+</div>
+

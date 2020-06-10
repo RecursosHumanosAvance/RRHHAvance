@@ -1,0 +1,38 @@
+﻿@model RecursosHumanosPRO.Models.ViewModels.TablaEmpresa
+@{
+    ViewBag.Title = "Insertar Empresa";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+    <h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("InsertarEmpresaT","Empresa",FormMethod.Post))
+{
+    
+<div class="row">
+    <div class="col-md-5">
+        <div class="form-group">
+            @Html.LabelFor(d => d.Nombre)
+            @Html.TextBoxFor(d => d.Nombre, " ", new { @class = "form-control" })
+            @Html.ValidationMessageFor(d => d.Nombre, null, new { @class = "danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(d => d.Telefono)
+            @Html.TextBoxFor(d => d.Telefono, " ", new { @class = "form-control" })
+            @Html.ValidationMessageFor(d => d.Telefono, null, new { @class = "danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(d => d.Direccion)
+            @Html.TextBoxFor(d => d.Direccion, " ", new { @class = "form-control" })
+            @Html.ValidationMessageFor(d => d.Direccion, null, new { @class = "danger" })
+        </div>
+                <div style=" text-align:right;">
+                    <input value="Guardar" class="btn btn-primary" type="submit" />
+                </div>
+</div>
+</div>
+
+
+}
+
+

@@ -1,0 +1,119 @@
+﻿
+@model RecursosHumanosPRO.Models.ViewModels.ListaGestionContrato
+@{
+    ViewBag.Title = "Gestionar Contratos";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<center><h2>@ViewBag.Title</h2></center>
+<br />
+<h2>Gestion de Empleado</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class=" table">
+            <tr>
+                <td>DUI :</td>
+                <td>@Model.Empleado.IdEmpleado</td>
+            </tr>
+            <tr>
+                <td>Nombre :</td>
+                <td>@Model.Empleado.Nombre</td>
+            </tr>
+            <tr>
+                <td>Apellido :</td>
+                <td>@Model.Empleado.Apellidos</td>
+            </tr>
+            <tr>
+                <td>Direccion :</td>
+                <td>@Model.Empleado.Direccion</td>
+            </tr>
+            <tr>
+                <td>Sexo :</td>
+                <td>@Model.Empleado.Sexo</td>
+            </tr>
+            <tr>
+                <td>Telefono :</td>
+                <td>@Model.Empleado.Telefono</td>
+            </tr>
+            <tr>
+                <td>Nit :</td>
+                <td>@Model.Empleado.Nit</td>
+            </tr>
+            <tr>
+                <td>Estado :</td>
+                <td>@Model.Empleado.Estado</td>
+            </tr>
+            <tr>
+                <td>Tipo :</td>
+                <td>@Model.Empleado.Tipo</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<br />
+<h2>Gestion de Contrato</h2>
+<div class="row">
+    <div class="col-md-12">
+        <table class=" table">
+            <tr>
+                <td>Id contrato :</td>
+                <td>@Model.Contrato.IdContrato</td>
+            </tr>
+            <tr>
+                <td>Id Empleado :</td>
+                <td>@Model.Contrato.IdEmpleado</td>
+            </tr>
+            <tr>
+                <td>Salario:</td>
+                <td>@Model.Contrato.Salario</td>
+            </tr>
+            <tr>
+                <td>Jornada laboral :</td>
+                <td>@Model.Contrato.JornadaLAboral</td>
+            </tr>
+            <tr>
+                <td>Dias de descanso:</td>
+                <td>@Model.Contrato.DiasdeDescanso</td>
+            </tr>
+            <tr>
+                <td>Fecha de contratacion:</td>
+                <td>@Model.Contrato.Fecha_de_contrato</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="row" style=" text-align:right;padding:5px;">
+    <a class="btn btn-danger" href="~/Contrato/Editar/@Model.Contrato.IdContrato">Modificar Contrato</a>
+</div>
+<br />
+<br />
+<h2>Gestion de vacaciones</h2>
+<div class="row" style=" text-align:right;padding:5px;">
+    <a class="btn btn-danger" href="~/Vacaciones/InsertarVaca/@Model.Contrato.IdContrato">Insertar vacaciones</a>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class=" table">
+            <tr>
+                <th>Id contrato</th>
+                <th>Id Vacaciones</th>
+                <th>desde</th>
+                <th>hasta</th>
+
+            </tr>
+            @foreach (var vaca in Model.Vacaciones)
+            {
+        <tr>
+            <td>@vaca.IdContrato</td>
+            <td>@vaca.IdVacaciones</td>
+            <td>@vaca.desde</td>
+            <td>@vaca.hasta</td>
+            <td><a class="btn btn-danger" href="Vacaciones/Eliminar/@vaca.IdVacaciones">
+    <i class="fas fa-trash"></i>
+</a></td>
+        </tr>
+            }
+        </table>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<RecursosHumanosPRO.Models.ViewModels.ListaEmpleados>
+@{
+    ViewBag.Title = "Empleados";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<center><h2> @ViewBag.Title </h2></center>
+    <div class="row" style=" text-align:right;padding:5px;">
+        <a href="~/Empleados/InsertarEmpleados" class="btn btn-primary"> Insertar nuevo</a>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class=" table">
+                <tr>
+                    <th>DUI</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Direccion</th>
+                    <th>Sexo</th>
+                    <th>Telefono</th>
+                    <th>Estado</th>
+                    <th>Tipo</th>
+                    <th>Puesto</th>
+                    <th colspan="3"></th>
+
+                </tr>
+                @foreach (var elento in Model)
+                {
+                    <tr>
+                        <td>@elento.IdEmpleado</td>
+                        <td>@elento.Nombre</td>
+                        <td>@elento.Apellido</td>
+                        <td>@elento.Direccion</td>
+                        <td>@elento.Sexo</td>
+                        <td>@elento.Telefono</td>
+                        <td>@elento.Estado </td>
+                        <td>@elento.Tipo</td>
+                        <td>@elento.NombrePuesto</td>
+                        <td >
+                            <a class="btn btn-default" href="~/Empleados/Editar/@elento.IdEmpleado">
+                            <i class="fas fa-pencil-alt"></i></a>
+                            <a class="btn btn-danger" href="~/Empleados/Eliminar/@elento.IdEmpleado">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                            <a class="btn btn-danger" href="~/Empleados/GestionarContrato/@elento.IdEmpleado">Gestionar contrato</a>
+
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+

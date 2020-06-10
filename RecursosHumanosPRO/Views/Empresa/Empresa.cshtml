@@ -1,0 +1,36 @@
+﻿@model IEnumerable<RecursosHumanosPRO.Models.ViewModels.ListaEmpresa>
+@{
+    ViewBag.Title = "Empresa";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+          <center><h2> @ViewBag.Title </h2></center>     
+<div class="row" style=" text-align:right;padding:5px;">
+    <a href="~/Empresa/InsertarEmpresa" class="btn btn-primary"> Insertar nuevo</a>
+</div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class=" table">
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Direccion</th>
+                </tr>
+                @foreach(var elemnto in Model)
+                {
+            <tr>
+                <td>@elemnto.IdEmpresa</td>
+                <td>@elemnto.Nombre</td>
+                <td>@elemnto.Telefono</td>
+                <td>@elemnto.Direccion</td>
+                <td>
+                    <a class="btn btn-default" href="~/Empresa/Editar/@elemnto.IdEmpresa"> <i class="fas fa-pencil-alt"></i></a>
+                    <a class="btn btn-danger" href="~/Empresa/Eliminar/@elemnto.IdEmpresa"><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+                }
+
+            </table>
+        </div>
+        </div>

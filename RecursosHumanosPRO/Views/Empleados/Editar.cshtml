@@ -1,0 +1,77 @@
+﻿@model RecursosHumanosPRO.Models.ViewModels.TablaEmpleados
+@{
+    ViewBag.Title = "Editar Empleados";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<center><h2>@ViewBag.Title</h2></center>
+<br />
+<br />
+@using (Html.BeginForm("Editar", "Empleados", FormMethod.Post))
+{
+
+    <div class="row">
+        <div class="col-md-5">
+            <div class="form-group">
+                @Html.LabelFor(d => d.IdEmpleado)
+                @Html.TextBoxFor(d => d.IdEmpleado, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.IdEmpleado, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Nombre)
+                @Html.TextBoxFor(d => d.Nombre, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Nombre, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Apellido)
+                @Html.TextBoxFor(d => d.Apellido, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Apellido, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Direccion)
+                @Html.TextBoxFor(d => d.Direccion, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Direccion, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Sexo)
+                @Html.TextBoxFor(d => d.Sexo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Sexo, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Telefono)
+                @Html.TextBoxFor(d => d.Telefono, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Telefono, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Nit)
+                @Html.TextBoxFor(d => d.Nit, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Nit, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Estado)
+                @Html.TextBoxFor(d => d.Estado, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Estado, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Tipo)
+                @Html.TextBoxFor(d => d.Tipo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Tipo, null, new { @class = "danger" })
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(d => d.IdPuesto)
+                @Html.DropDownList("IdPuesto", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.IdPuesto, null, new { @class = "danger" })
+            </div>
+
+            <div style=" text-align:right;">
+                <input value="Guardar" class="btn btn-primary" type="submit" />
+            </div>
+        </div>
+    </div>
+
+
+}
+<br />
+<br />

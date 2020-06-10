@@ -1,0 +1,39 @@
+﻿@model RecursosHumanosPRO.Models.ViewModels.TablaHorasExtras
+@{
+    ViewBag.Title = "Insertar Horas Extras";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Editar", "HorasExtras", FormMethod.Post))
+{
+
+    <div class="row">
+        <div class="col-md-5">
+            @Html.HiddenFor(d => d.IdHorasExtras)
+            <div class="form-group">
+                @Html.LabelFor(d => d.IdEmpleado, "Id Empleado")
+                @Html.TextBoxFor(d => d.IdEmpleado, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.IdEmpleado, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.TablaHora, "Cantidad horas")
+                @Html.TextBoxFor(d => d.TablaHora, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.TablaHora, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.PrecioHora, "Precio Hora")
+                @Html.TextBoxFor(d => d.PrecioHora, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.PrecioHora, null, new { @class = "danger" })
+            </div>
+
+            <div style=" text-align:right;">
+                <input value="Guardar" class="btn btn-primary" type="submit" />
+                @Html.ActionLink("Regresar", "Empleados")
+            </div>
+        </div>
+    </div>
+
+
+}

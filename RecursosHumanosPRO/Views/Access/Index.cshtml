@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Empleados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <center><h1>Login</h1></center>
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col-5 mx-auto">
+        @using (Html.BeginForm("Enter", "Access", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label>Usuario</label>
+                <input type="text" class="form-control" id="usuario" name="user" placeholder="usuario">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" id="pass" name="password" placeholder="password">
+            </div>
+            <input type="submit" name="entrar" value="entrar" class="btn btn-outline-primary btn-block"/>
+        }
+        </div>
+</div>
+
+
+
+
+<script>
+    $(document).ready(function()
+    {
+        $("#frm").submit(function(e)
+        {
+            e.preventDefault();
+            url = "@Url.Content("~/Access/Enter")"
+            parametros = $(this).serialize();
+            $.post(url, parametros, function (data)
+            {
+                if (data == "1")
+                {
+                    document.location.href = "@Url.Content("~/Home/IndeXadmin")";
+                } else
+                {
+                    alert(data)
+                }
+            })
+        })
+    })
+
+</script>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<RecursosHumanosPRO.Models.ViewModels.ListaUsuarios>
+@{
+    ViewBag.Title = "Usuarios";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<center><h2> @ViewBag.Title </h2></center>
+<div class="row" style=" text-align:right;padding:5px;">
+    <a href="~/Usuarios/InsertarUsuarios" class="btn btn-primary"> Insertar nuevo</a>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class=" table">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Direccion</th>
+                <th>Sexo</th>
+                <th>Telefono</th>
+                <th>Estado</th>
+                <th>Usuario</th>
+
+            </tr>
+            @foreach (var elento in Model)
+            {
+                <tr>
+                    <td>@elento.Idusuario</td>
+                    <td>@elento.Nombre</td>
+                    <td>@elento.Apellidos</td>
+                    <td>@elento.Direccion</td>
+                    <td>@elento.Sexo</td>
+                    <td>@elento.Telefono</td>
+                    <td>@elento.Estado </td>
+                    <td>@elento.Usuario</td>
+                    
+                    <td>
+                       
+                        <a class="btn btn-danger" href="~/Usuarios/Eliminar/@elento.Idusuario">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                        
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+

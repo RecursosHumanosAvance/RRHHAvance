@@ -1,0 +1,66 @@
+﻿@model RecursosHumanosPRO.Models.ViewModels.TablaUsuarios
+@{
+    ViewBag.Title = "Insertar Usuarios";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<center><h2>@ViewBag.Title</h2></center><br /><br />
+
+@using (Html.BeginForm("InsertarUsuarios", "Usuarios", FormMethod.Post))
+{
+
+    <div class="row">
+        <div class="col-md-5">
+            <div class="form-group">
+                @Html.LabelFor(d => d.Nombre)
+                @Html.TextBoxFor(d => d.Nombre, " ", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Nombre, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Apellidos)
+                @Html.TextBoxFor(d => d.Apellidos, " ", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Apellidos, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Direccion)
+                @Html.TextBoxFor(d => d.Direccion, " ", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Direccion, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Sexo)
+                @Html.TextBoxFor(d => d.Sexo, " ", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Sexo, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Telefono)
+                @Html.TextBoxFor(d => d.Telefono, " ", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Telefono, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Estado)
+                @Html.TextBoxFor(d => d.Estado, " ", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Estado, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.Usuario)
+                @Html.TextBoxFor(d => d.Usuario, " ", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Usuario, null, new { @class = "danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(d => d.Pass)
+                @Html.TextBoxFor(d => d.Pass, " ", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Pass, null, new { @class = "danger" })
+            </div>
+
+
+            <div style=" text-align:right;">
+                <input value="Guardar" class="btn btn-primary" type="submit" />
+                
+            </div>
+        </div>
+    </div>
+
+
+}
+<br /><br />

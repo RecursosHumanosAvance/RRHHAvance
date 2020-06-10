@@ -1,0 +1,43 @@
+﻿@model RecursosHumanosPRO.Models.ViewModels.TablaVaca
+@{
+    ViewBag.Title = "Insertar Vacaciones";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<center><h2>@ViewBag.Title</h2></center>
+
+<br />
+<br />
+@using (Html.BeginForm("InsertarVaca", "Vacaciones", FormMethod.Post))
+{
+
+    <div class="row">
+        <div class="col-md-5">
+
+            <div class="form-group">
+                @Html.LabelFor(d => d.desde)
+                @Html.EditorFor(d => d.desde, " ", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.desde, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.hasta)
+                @Html.EditorFor(d => d.hasta, " ", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.hasta, null, new { @class = "danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.IdContrato)
+                @Html.TextBoxFor(d => d.IdContrato, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.IdContrato, null, new { @class = "danger" })
+            </div>
+
+            <div style=" text-align:right;">
+                <input value="Guardar" class="btn btn-primary" type="submit" />
+                @Html.ActionLink("Regresar", "Empleados", "Empleados")
+            </div>
+        </div>
+    </div>
+
+
+}
+<br />
+<br />

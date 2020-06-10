@@ -1,19 +1,19 @@
-create database RecursosHumanos
+/*create database RecursosHumanos*/
 use RecursosHumanos
 go 
 
 Create table Empresa 
 (
-  IdEmpresa Int primary key not null,
+  IdEmpresa Int primary key not null identity(1,1),
   Nombre nvarchar (50) not null,
   Telefono nvarchar(20) not null,
-  Direccion nvarchar(20) not null 
+  Direccion nvarchar(200) not null 
 )
 
 
 Create table Departamentos
 (
-IdDepartamentos Int Not null primary key ,
+IdDepartamentos Int Not null primary key identity(1,1),
 NombreDepartamento Nvarchar (50) not null,
 IdEmpresa int Not null 
 )
@@ -21,7 +21,7 @@ IdEmpresa int Not null
 
 Create table Puestos
 (
-IdPuesto Int Not null primary key ,
+IdPuesto Int Not null primary key identity(1,1),
 NombrePuesto Nvarchar (50) not null,
 IdDepartamentos int Not null ,
 Descripcion nVarchar (300)
@@ -30,7 +30,7 @@ Descripcion nVarchar (300)
 
 Create table Vacantes
 (
-IdVacantes Int Not null primary key ,
+IdVacantes Int Not null primary key  identity(1,1),
 Cantidad int Not null ,
 IdPuesto int 
 )
@@ -44,7 +44,6 @@ Apellidos Nvarchar (100)Not null ,
 Direccion Nvarchar (100)Not null ,
 Sexo Nvarchar (100)Not null ,
 Telefono Nvarchar (100)Not null ,
-Dui Nvarchar (100)Not null , 
 Nit Nvarchar (100)Not null ,
 Estado Nvarchar (100)Not null ,
 Tipo Nvarchar (100)Not null ,
@@ -54,7 +53,7 @@ IdPuesto int
 
 Create table Contratos
 (
-IdContrato int  Not null primary key ,
+IdContrato int  Not null primary key identity(1,1),
 IdEmpleado int ,
 Salario Decimal (13,2)Not null ,
 JornadaLAboral Nvarchar (100)Not null ,
@@ -66,7 +65,7 @@ Fecha_de_contrato DateTime
 
 Create table Vacaciones
 (
-IdVacaciones Int not null primary key,
+IdVacaciones Int not null primary key identity(1,1),
 desde date not null,
 hasta date not null,
 IdContrato int not null
@@ -75,7 +74,7 @@ IdContrato int not null
 
 create table HorasExtras
 (
-IdHorasExtras int Not null Primary key,
+IdHorasExtras int Not null Primary key identity(1,1),
 IdEmpleado int  not null ,
 TablaHora int  not null,
 PrecioHora Decimal(12,2)  not null
@@ -84,14 +83,14 @@ PrecioHora Decimal(12,2)  not null
 
 create table Rendimiento
 (
-IdRendimiento int Not null Primary key,
+IdRendimiento int Not null Primary key identity(1,1),
 IdEmpleado int  not null ,
 Observaciones nVarchar(300),
 Rendimiento nvarchar(100)
 )
 
 create table Aguinaldo
-( IdAguinaldo int not null primary key,
+( IdAguinaldo int not null primary key identity(1,1),
 FechaActual Date ,
 Total Decimal (12,2),
 IdContrato int
@@ -107,3 +106,28 @@ alter table HorasExtras add constraint FK_HorasExtras_Empleados foreign key (IdE
 alter table Rendimiento add constraint FK_Rendimiento_Empleados foreign key (IdEmpleado) references Empleados(IdEmpleado)
 alter table Aguinaldo add constraint FK_Aguinaldo_Contratos foreign key (IdContrato) references Contratos(IdContrato)
 alter table Contratos add constraint FK_Contratos_Empleado foreign key (IdEmpleado) references Empleados(IdEmpleado)
+
+Create table Usaurios
+(
+Idusuario int  Not null primary key identity(1,1),
+Nombre Nvarchar (100)Not null ,
+Apellidos Nvarchar (100)Not null ,
+Direccion Nvarchar (100)Not null ,
+Sexo Nvarchar (100)Not null ,
+Telefono Nvarchar (100)Not null ,
+Estado Nvarchar (100)Not null ,
+usuario Nvarchar (100)Not null,
+pass Nvarchar (100)Not null 
+)
+
+
+insert into Usaurios values('william','Ramirez Lopez','San salvador','M','23456789','Activo','will','123');
+
+
+
+
+
+
+
+
+

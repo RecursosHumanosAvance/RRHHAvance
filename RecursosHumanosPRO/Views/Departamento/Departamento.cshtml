@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Departamento";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<center><h2> @ViewBag.Title </h2></center>
+<div class="row" style=" text-align:right;padding:5px;">
+    <a href="~/Departamento/InsertarDepartamento" class="btn btn-primary"> Insertar nuevo</a>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class=" table">
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Empresa</th>
+            </tr>
+            @foreach (var elento in Model)
+            {
+                <tr>
+                    <td>@elento.IdDepartamento</td>
+                    <td>@elento.NombreDepartamento</td>
+                    <td>@elento.NombreEmpresa </td>
+                    <td>
+                        <a class="btn btn-default" href="~/Departamento/Editar/@elento.IdDepartamento">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                        <a class="btn btn-danger" href="~/Departamento/Eliminar/@elento.IdDepartamento">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+
+<br />
+<br />
+
+
